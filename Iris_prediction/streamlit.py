@@ -34,7 +34,8 @@ pg = st.navigation(
     }
 )
 
-
+st.sidebar.text("Made by Florent Saunier")
+st.logo("Iris_prediction/images/fleur.png") 
 
 
 

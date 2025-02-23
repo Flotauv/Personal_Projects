@@ -6,7 +6,7 @@ import streamlit as st
 
 about_page_intro = st.Page(
     page='pages/Introduction.py',
-    title='Introduction',
+    title="Les fleurs  ",
     #icon = ":material/account_circle:",
     default=True
 
@@ -21,7 +21,21 @@ project_iris_page_1 = st.Page(
 
 # --- Navigation SETUP ---
 
-pg = st.navigation(pages=[about_page_intro,project_iris_page_1])
+#pg = st.navigation(pages=[about_page_intro,project_iris_page_1])
+
+
+
+# --- Navugation Setup [With sections ] --- 
+
+pg = st.navigation(
+    {
+        'Info' : [about_page_intro],
+        'Données' : [project_iris_page_1]
+    }
+)
+
+
+
 
 
 # --- Navigation RUN 
@@ -29,5 +43,24 @@ pg = st.navigation(pages=[about_page_intro,project_iris_page_1])
 pg.run()
 
 
-#def __main__():
-    #return 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# --- Définition environnement principal --- #
+def main():
+    print("Hello world")
+
+if main=="__main__":
+    main()
+
+    

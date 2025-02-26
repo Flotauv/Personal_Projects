@@ -1,5 +1,6 @@
 import streamlit as st 
 from sklearn.datasets import load_iris
+import pandas as pd
 # --- Title ---
 
 
@@ -8,9 +9,11 @@ st.title("Découverte des données")
 
 # --- DataBase 
 
-db = load_iris()
+donnees = load_iris()
 
-st.dataframe(db)
+
+
+
 
 
   

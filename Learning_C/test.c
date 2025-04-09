@@ -7,13 +7,32 @@
 #include <stdio.h> 
 
 
+int fct_test(int a,int b){
+    return a+b;
+}
+
 int main() {
     int a = 5;
     int b = 3;
     int c = a + b;
-    printf("%d",c);
+    int d = 40;
+    float numberfloat = 3.345f;
+    double doubleTest= 12.45;
+
+
+
+    double exponentiel = 5e6;
+    char caractere = 'S';
+    printf("Age : %d",c);
     //std::cout << "Hello world "<< std::endl; 
     //std::cin.ignore();
+
+    printf("\n New age is %d ",d);
+    printf("\n Premier double qui est %f",doubleTest + numberfloat);
+    printf("\n Notre cqrqctere est %c",caractere);
+
+
+    //printf(fct_test(5,3));   
     return 0;
 }
 

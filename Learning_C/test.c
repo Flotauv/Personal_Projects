@@ -12,24 +12,16 @@ int fct_test(int a,int b){
 }
 
 int main() {
-    int a = 5;
-    int b = 3;
-    int c = a + b;
-    int d = 40;
-    float numberfloat = 3.345f;
-    double doubleTest= 12.45;
+    double number1;
+    char alphabet;
+    printf("Entrez des valeurs: ");
+    
+    scanf("%lf %c",&number1,&alphabet);
 
 
 
-    double exponentiel = 5e6;
-    char caractere = 'S';
-    printf("Age : %d",c);
-    //std::cout << "Hello world "<< std::endl; 
-    //std::cin.ignore();
-
-    printf("\n New age is %d ",d);
-    printf("\n Premier double qui est %f",doubleTest + numberfloat);
-    printf("\n Notre cqrqctere est %c",caractere);
+    printf("Le nombre entré est :%lf",number1);
+    printf("\n La lettre entrée est :%c",alphabet);
 
 
     //printf(fct_test(5,3));   

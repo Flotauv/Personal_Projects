@@ -23,6 +23,9 @@ Le double permet d'afficher un nombre avec plus de précision et ils peuvent sto
 // Remainder %
 // Increment ++  ( à mettre avant la variable)
 // Decrement --   (à mettre avant la variable)
+// &&  - AND
+// ||  -- OR 
+// !   -- NOT
 
 
 ## Compilation 

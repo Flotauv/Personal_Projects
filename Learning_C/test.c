@@ -5,6 +5,7 @@
 
 // header pour utiliser les flux , et c'est un package qu on importe 
 #include <stdio.h> 
+#include <stdbool.h>
 /*
 If I want to put comments on multiple lines, I can use this method
 I can also use // to comment on a single line
@@ -13,9 +14,15 @@ I can also use #include to include a library
 */
 
 
+// void signie qu'il n'y a pas de return et c'est le cas il n'y a pas de return
+void fct1(int a,int b){
+    printf("%d",a+b);
+}
 
-int fct_test(int a,int b){
-    return a+b;
+// si on donne pas une valeur à la fct dans le main , le compilateur ne la traduit pas
+int fct2(int a){
+    return a;
+    printf("Return statement"); 
 }
 
 int main() {
@@ -31,12 +38,24 @@ int main() {
     double x = variable+1;
     printf("%lf \n",--x);
 
-    int valeur1 = 5.5;
+    float valeur1 = 5.5;
     int valeur2 = 6;
+    float valeur3 = (int)valeur1 + valeur2;
 
-    printf("%d",valeur1);
+    printf("%f \n",valeur3);
 
-    
+    bool varb1 = (12 > 9);  // true est égale à 1
+    bool varb2 = false; // false est égale à 0
+    printf("%d\n",varb1);
+
+    if (varb1 == 1){
+        printf("La vie est belle\n");
+    }
+    else{
+        printf("Caca\n");
+    }
+    int valeur_fct = fct2(23);
+    printf("%d",valeur_fct);
 
     //printf(fct_test(5,3));   
     return 0;

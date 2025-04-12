@@ -5,6 +5,13 @@
 
 // header pour utiliser les flux , et c'est un package qu on importe 
 #include <stdio.h> 
+/*
+If I want to put comments on multiple lines, I can use this method
+I can also use // to comment on a single line
+I can also use #define to define a constant
+I can also use #include to include a library
+*/
+
 
 
 int fct_test(int a,int b){
@@ -12,25 +19,24 @@ int fct_test(int a,int b){
 }
 
 int main() {
-    int a = 5;
-    int b = 3;
-    int c = a + b;
-    int d = 40;
-    float numberfloat = 3.345f;
-    double doubleTest= 12.45;
+    double number1;
+    char alphabet;
 
+    printf("Entrez des valeurs (Un double et un caractère): \n");
+    //scanf("%lf %c",&number1,&alphabet);
+    //printf("Le nombre entré est :%lf",number1);
+    //printf("\n La lettre entrée est :%c",alphabet);
 
+    double variable = 12;
+    double x = variable+1;
+    printf("%lf \n",--x);
 
-    double exponentiel = 5e6;
-    char caractere = 'S';
-    printf("Age : %d",c);
-    //std::cout << "Hello world "<< std::endl; 
-    //std::cin.ignore();
+    int valeur1 = 5.5;
+    int valeur2 = 6;
 
-    printf("\n New age is %d ",d);
-    printf("\n Premier double qui est %f",doubleTest + numberfloat);
-    printf("\n Notre cqrqctere est %c",caractere);
+    printf("%d",valeur1);
 
+    
 
     //printf(fct_test(5,3));   
     return 0;

@@ -64,9 +64,7 @@ int main() {
 
     //Switch statement 
 
-    int variable1;
-    printf("Choose a number : ");
-    scanf("%d",&variable1);
+    int variable1=22;
 
     switch (variable1){
         case 22:
@@ -82,12 +80,18 @@ int main() {
 
 
     //While loop while(condition){script}  
-    int test = 10;
-    while(test != 0){
+    int count = 10;
+    while(count != 0){
        // --test; première méthode 
-       test = test - 1; // deuxième méthode 
-        printf("La valeur de test est maintenant de : %d \n",test);
+       count = count - 1; // deuxième méthode 
+       printf("La valeur de test est maintenant de : %d \n",count);
 
+    }
+    // For loop : for (initialiseExpression ; testExpression ; UpdateExpression){}
+
+    for (int i=100 ; i>=0 ;i=i-2){
+        int test =  i;
+        printf("%d ",test);
     }
 
     return 0;

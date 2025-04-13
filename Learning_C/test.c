@@ -55,9 +55,41 @@ int main() {
         printf("Caca\n");
     }
     int valeur_fct = fct2(23);
-    printf("%d",valeur_fct);
+    printf("%d\n",valeur_fct);
 
-    //printf(fct_test(5,3));   
+    // Ternary operator
+    int age = 13;
+    char result= (age >= 18) ? printf("You can vote\n") : printf("You cannot vote\n");
+    printf("%c\n",result);
+
+    //Switch statement 
+
+    int variable1;
+    printf("Choose a number : ");
+    scanf("%d",&variable1);
+
+    switch (variable1){
+        case 22:
+        printf("la valeur est donc :%d \n",++variable1);
+        break;
+
+
+        default:
+        printf("%d",--variable1);
+
+
+    }
+
+
+    //While loop while(condition){script}  
+    int test = 10;
+    while(test != 0){
+       // --test; première méthode 
+       test = test - 1; // deuxième méthode 
+        printf("La valeur de test est maintenant de : %d \n",test);
+
+    }
+
     return 0;
 }
 

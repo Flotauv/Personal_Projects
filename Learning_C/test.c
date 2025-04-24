@@ -30,9 +30,9 @@ int main() {
     char alphabet;
 
     printf("Entrez des valeurs (Un double et un caractère): \n");
-    //scanf("%lf %c",&number1,&alphabet);
-    //printf("Le nombre entré est :%lf",number1);
-    //printf("\n La lettre entrée est :%c",alphabet);
+    scanf("%lf %c",&number1,&alphabet);
+    printf("Le nombre entré est :%lf",number1);
+    printf("\n La lettre entrée est :%c",alphabet);
 
     double variable = 12;
     double x = variable+1;
@@ -45,7 +45,7 @@ int main() {
     printf("%f \n",valeur3);
 
     bool varb1 = (12 > 9);  // true est égale à 1
-    bool varb2 = false; // false est égale à 0
+    
     printf("%d\n",varb1);
 
     if (varb1 == 1){
@@ -90,10 +90,11 @@ int main() {
     // For loop : for (initialiseExpression ; testExpression ; UpdateExpression){}
 
     for (int i=100 ; i>=0 ;i=i-2){
-        int test =  i;
+        int test = i;
         printf("%d ",test);
     }
 
+    // break and continues statement 
     return 0;
 }
 

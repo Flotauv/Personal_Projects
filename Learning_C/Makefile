@@ -1,3 +1,2 @@
-test : test.c
-	gcc -o test test.c
-
+test.o : test.c
+	gcc -c -Wall test.

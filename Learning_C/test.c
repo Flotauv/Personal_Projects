@@ -6,6 +6,7 @@
 // header pour utiliser les flux , et c'est un package qu on importe 
 #include <stdio.h> 
 #include <stdbool.h>
+#include "packages.h"
 /*
 If I want to put comments on multiple lines, I can use this method
 I can also use // to comment on a single line
@@ -93,6 +94,9 @@ int main() {
         int test = i;
         printf("%d ",test);
     }
+
+    int quotien = function_test(10,5);
+    printf("Le résultat de la fonction appelée du fichier 'packages.h' est %d",quotien);
 
     // break and continues statement 
     return 0;

@@ -57,6 +57,9 @@ Pour cela, il faut créer un fichier Makefile.
 produit : source
     commandes
 
+cible : dependance
+    commandes 
+
 Le fichier Makefile peut être enrichi pour mettre des commandes plus complexes, ajouter des conditions, des listes , des sous fichiers makefile si notre code est un peu trop volumineux...
 Il va permettre de créer à partir du fichier source (le fichier .c) un fichier objet qui lui va s'exécuter.
 
@@ -66,14 +69,18 @@ Cette commande permet de créer le fichier objet pour ensuite écire dans le mak
 
 Note : gcc est le compilateur par excellence
 
+On peut même rajouter des variables dans le fichier makefile
+
 
 #### Fichier exécutable 
 
 En soit le code du programme au format .c n'est pas à proprement lancé, il doit être compilé auparavant, comme expliqué plus haut, c'est par l'intermédiaire d'un exécutable que celui ci se lance
 Pour cela on utilise un compilateur ( gcc par exemple avec la commande gcc programme.c).
 Un fichier .out apparait et ainsi on peut l'exécuter avec la commande ./a.out dans le terminal de commande 
+Le fichier est un .exe sur windows et sur mac ça n'est rien. 
 ### Fichiers format .h
 Ce sont des fichiers qui contiennent la déclaration de fonctions, la définition de constantes , un exemple serait un fichier utils.h 
+Ces fichiers peuvent être crées par le programmeur pour définir ses fonctions et les appelées dans les fichiers sources souhaités. 
 
 ## Fichier CMake
 

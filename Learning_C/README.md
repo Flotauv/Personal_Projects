@@ -87,6 +87,9 @@ Ces fichiers peuvent être crées par le programmeur pour définir ses fonctions
 Famille d'outils open-source multiplate form conçue pour construire tester et intégrer des logiciels.
 On peut générer facilement des fichiers Makefile ainsi que des fichiers projets pour Codeblocks ou autre environnement. 
 
+## Librairies disponibles
 
+*math.h* (La même librairie qu'en python pour les opérateurs mathématiques)
+*ctype.h* (Pour des opérations sur des chaines de caracteres)
 ## Fonctions rencontrées 
 scanf() : permet à l'utilisateur de rentrer une valeur qui est assignée à une variable

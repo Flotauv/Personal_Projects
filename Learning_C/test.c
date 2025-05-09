@@ -27,41 +27,7 @@ int fct2(int a){
 }
 
 int main() {
-    double number1;
-    char alphabet;
-
-    printf("Entrez des valeurs (Un double et un caractère): \n");
-    scanf("%lf %c",&number1,&alphabet);
-    printf("Le nombre entré est :%lf",number1);
-    printf("\n La lettre entrée est :%c",alphabet);
-
-    double variable = 12;
-    double x = variable+1;
-    printf("%lf \n",--x);
-
-    float valeur1 = 5.5;
-    int valeur2 = 6;
-    float valeur3 = (int)valeur1 + valeur2;
-
-    printf("%f \n",valeur3);
-
-    bool varb1 = (12 > 9);  // true est égale à 1
     
-    printf("%d\n",varb1);
-
-    if (varb1 == 1){
-        printf("La vie est belle\n");
-    }
-    else{
-        printf("Caca\n");
-    }
-    int valeur_fct = fct2(23);
-    printf("%d\n",valeur_fct);
-
-    // Ternary operator
-    int age = 13;
-    char result= (age >= 18) ? printf("You can vote\n") : printf("You cannot vote\n");
-    printf("%c\n",result);
 
     //Switch statement 
 
@@ -100,5 +66,10 @@ int main() {
 
     // break and continues statement 
     return 0;
+
+    int bool_age = Is_age_legal(19);
+    printf("Valeur du bool de l age %d",bool_age);
+    
+    
 }
 

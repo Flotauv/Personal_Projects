@@ -62,16 +62,16 @@ int main() {
     }
 
     int quotien = function_test(15,5);
-    printf("Le résultat de la fonction appelée du fichier 'packages.h' est %d",quotien);
+    printf("Le résultat de la fonction appelée du fichier 'packages.h' est %d \n",quotien);
 
     
-    
+     
 
-    Is_age_legal(15);
-    //test;
+    int age[5] = {1,2,3,4,5};
+    int second_list[10]; // elle est crée mais on sait pas ce qu'elle vaut encore.
+    printf("La liste des âges est %d",age[0]);
+
     
-    //printf("Valeur du bool de l age %d",bool_age);
-    
-    
+    return 0; // il faut le laisser dans un main celui là
 }
 

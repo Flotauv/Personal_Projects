@@ -8,12 +8,14 @@ int function_test(int a , int b){
     return result; 
 }
 
-void Is_age_legal(int age){
+int Is_age_legal(int age){
     if (age>18){
+        printf("La personne est majeure");
         return 1;
         
     }
     else{
+        printf("La personne n'est pas majeure");
         return 0;
         
     }

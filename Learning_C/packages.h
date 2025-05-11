@@ -8,14 +8,14 @@ int function_test(int a , int b){
     return result; 
 }
 
-int Is_age_legal(int age){
-    if (age<18){
-        printf("La personne n'est pas majeure et son âge est %d",age);
-        return 0;
+void Is_age_legal(int age){
+    if (age>18){
+        return 1;
+        
     }
     else{
-        printf("La personne est majeure et son âge est %d",age);
-        return 1;
+        return 0;
+        
     }
 }
 // On doit pouvoir optimiser le case non ?

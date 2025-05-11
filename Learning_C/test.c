@@ -61,14 +61,16 @@ int main() {
         printf("%d ",test);
     }
 
-    int quotien = function_test(10,5);
+    int quotien = function_test(15,5);
     printf("Le résultat de la fonction appelée du fichier 'packages.h' est %d",quotien);
 
-    // break and continues statement 
-    return 0;
+    
+    
 
-    int bool_age = Is_age_legal(19);
-    printf("Valeur du bool de l age %d",bool_age);
+    Is_age_legal(15);
+    //test;
+    
+    //printf("Valeur du bool de l age %d",bool_age);
     
     
 }

@@ -6,6 +6,7 @@
 // header pour utiliser les flux , et c'est un package qu on importe 
 #include <stdio.h> 
 #include <stdbool.h>
+#include <string.h>
 #include "packages.h"
 /*
 If I want to put comments on multiple lines, I can use this method
@@ -26,50 +27,36 @@ int fct2(int a){
     printf("Return statement"); 
 }
 
+
+// Strings exercices 
+char variable_str []= "C Programming";
+
 int main() {
-    
+    printf("Il faut entrer un mot : ");
+    //scanf("%s",variable_str);
+    fgets(variable_str,sizeof(variable_str),stdin);
+    printf("The word is : %s",variable_str);
 
-    //Switch statement 
+    printf("Length of variable : %zu",strlen(variable_str));
+    char newFood[strlen(variable_str)];
+    strcpy(newFood,variable_str);
 
-    int variable1=22;
+    printf("New food is %s",newFood);
 
-    switch (variable1){
-        case 22:
-        printf("la valeur est donc :%d \n",++variable1);
-        break;
+    char var1 [] = "Gros";
+    char var2 [] = "Zizi";
+    strcat(var1,var2);
+    printf("%s",var1);
 
-
-        default:
-        printf("%d",--variable1);
-
-
-    }
-
-
-    //While loop while(condition){script}  
-    int count = 10;
-    while(count != 0){
-       // --test; première méthode 
-       count = count - 1; // deuxième méthode 
-       printf("La valeur de test est maintenant de : %d \n",count);
-
-    }
-    // For loop : for (initialiseExpression ; testExpression ; UpdateExpression){}
-
-    for (int i=100 ; i>=0 ;i=i-2){
-        int test = i;
-        printf("%d ",test);
-    }
-
-    int quotien = function_test(15,5);
-    printf("Le résultat de la fonction appelée du fichier 'packages.h' est %d \n",quotien);
+    char var1_bis [] = "etre";
+    char var2_bis [] = "zizi";
+    int result = strcmp(var1_bis,var2_bis);
+    printf("result is : %d",result);
+    // problème dans la compilation ? zsh trace trap ... qu'est ce que cela signifie ?
 
     
-     
 
-    int age[5] = {1,2,3,4,5};
-    int second_list[10]; // elle est crée mais on sait pas ce qu'elle vaut encore.
-    printf("La liste des âges est %d",age[0]);
+    
 
     
     return 0; // il faut le laisser dans un main celui là

@@ -17,6 +17,7 @@ Quelques informations importantes :
 - double (8 bytes %lf pour afficher)
 - float (4 bytes %f pour afficher)
 - char (1 byte %c pour afficher) 
+- string (X bytes %zu pour afficher)
 
 Le double permet d'afficher un nombre avec plus de précision et ils peuvent stocker plus d'informations étant codés sur plus de bytes. 
 
@@ -93,3 +94,7 @@ On peut générer facilement des fichiers Makefile ainsi que des fichiers projet
 *ctype.h* (Pour des opérations sur des chaines de caracteres)
 ## Fonctions rencontrées 
 scanf() : permet à l'utilisateur de rentrer une valeur qui est assignée à une variable
+strlen(): permet de renvoyer la longueur d'une chaine de caractères
+strpcpy(destination,variable) : permet d'assigner à destination la variable 'variable'
+strcat(variable1;variable2) : permet de concatener var1 et var2 à partir de var1
+strcmp(var1,var2) : retourne le nombre de caractères différent entre var1 et var2 , output est un entier

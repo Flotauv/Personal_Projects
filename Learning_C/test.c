@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include "packages.h"
+
 /*
 If I want to put comments on multiple lines, I can use this method
 I can also use // to comment on a single line
@@ -43,8 +44,8 @@ int main() {
 
     printf("New food is %s",newFood);
 
-    char var1 [] = "Gros";
-    char var2 [] = "Zizi";
+    char var1 [] = "ABC";
+    char var2 [] = "DEF";
     strcat(var1,var2);
     printf("%s",var1);
 
@@ -52,6 +53,17 @@ int main() {
     char var2_bis [] = "zizi";
     int result = strcmp(var1_bis,var2_bis);
     printf("result is : %d",result);
+
+    int age = 18;
+    int *valeur = &age;
+    printf("The adress of the age pointer is : %p \n",&age);
+    printf("The valeur of the pointer is : %d \n",*valeur);
+
+    int test[4] = {1,2334443,3,4};
+    list_of_adress(test);
+    printf("Taille premier element :%ld, taille deuxieme element : %ld",sizeof(test[0]),sizeof(test[12]));
+
+
     // problème dans la compilation ? zsh trace trap ... qu'est ce que cela signifie ?
 
     

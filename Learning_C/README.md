@@ -87,7 +87,13 @@ Ces fichiers peuvent être crées par le programmeur pour définir ses fonctions
 
 Famille d'outils open-source multiplate form conçue pour construire tester et intégrer des logiciels.
 On peut générer facilement des fichiers Makefile ainsi que des fichiers projets pour Codeblocks ou autre environnement. 
+## Pointers
 
+Les pointers permettent de créer des adresses spécifiques pour une variable, une variable unique avec le caractère '&'
+
+Pour afficher leur valeur on utilise des pointeurs qui sont : *valeur avec le caractère '*'
+
+Un pointeur doit toujours correspondre à une adresse mémoire d'une variable sinon cela ne fonctionne pas.
 ## Librairies disponibles
 
 *math.h* (La même librairie qu'en python pour les opérateurs mathématiques)

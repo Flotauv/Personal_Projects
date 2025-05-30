@@ -8,6 +8,7 @@ int function_test(int a , int b){
     return result; 
 }
 
+// Fct to know if the person is mayor or not
 int Is_age_legal(int age){
     if (age>18){
         printf("La personne est majeure");
@@ -20,6 +21,7 @@ int Is_age_legal(int age){
         
     }
 }
+
 // On doit pouvoir optimiser le case non ?
 void switch_health_state(int state){
     switch(state){
@@ -37,5 +39,13 @@ void switch_health_state(int state){
     }
 }
 
+void list_of_adress(int numbers[]){
+    int taille = (sizeof(numbers)/sizeof(numbers[0]));
+    printf("Affichage des elements d'entrée et leur adresse : ");
+    for(int i=0;i<taille ;i++){
+        printf("Adresse du nombre [%d] : %p\n",i,&numbers[i]);
+    }
+    
+}
 #endif
 

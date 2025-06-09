@@ -94,6 +94,9 @@ Les pointers permettent de créer des adresses spécifiques pour une variable, u
 Pour afficher leur valeur on utilise des pointeurs qui sont : *valeur avec le caractère '*'
 
 Un pointeur doit toujours correspondre à une adresse mémoire d'une variable sinon cela ne fonctionne pas.
+Exemple : adresse_pointeur = 18;
+            *variable_memoire = &adresse_pointeur;
+          
 ## Librairies disponibles
 
 *math.h* (La même librairie qu'en python pour les opérateurs mathématiques)
@@ -104,3 +107,7 @@ strlen(): permet de renvoyer la longueur d'une chaine de caractères
 strpcpy(destination,variable) : permet d'assigner à destination la variable 'variable'
 strcat(variable1;variable2) : permet de concatener var1 et var2 à partir de var1
 strcmp(var1,var2) : retourne le nombre de caractères différent entre var1 et var2 , output est un entier
+
+sizeof(list) : retourne la taille en octet de la liste.
+
+Chaque élément de la liste a la même taille, ce qui signifie que pour avoir la taille d'une liste 

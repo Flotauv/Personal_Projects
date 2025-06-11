@@ -40,11 +40,11 @@ void switch_health_state(int state){
 }
 
 void list_of_adress(int numbers[]){
-    int taille = (sizeof(numbers)/sizeof(numbers[0]));
+    int taille = sizeof(numbers)/sizeof(numbers[0]);
     printf("Taille de la liste de nombres en entrée : %d \n ", taille);
     printf("Affichage des elements d'entrée et leur adresse : \n");
-    for(int i=0;i<=taille ;i++){
-        printf("Adresse du nombre [%d] : %p\n",i,&numbers[i]);
+    for(int i=0;i<=taille+1 ;i++){
+        printf("Adresse du nombre [%d] : %p\n",numbers[i],&numbers[i]);
     }
     
 }

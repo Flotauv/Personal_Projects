@@ -86,7 +86,8 @@ Ces fichiers peuvent être crées par le programmeur pour définir ses fonctions
 ## Fichier CMake
 
 Famille d'outils open-source multiplate form conçue pour construire tester et intégrer des logiciels.
-On peut générer facilement des fichiers Makefile ainsi que des fichiers projets pour Codeblocks ou autre environnement. 
+On peut générer facilement des fichiers Makefile ainsi que des fichiers projets pour Codeblocks ou autre environnement.
+
 ## Pointers
 
 Les pointers permettent de créer des adresses spécifiques pour une variable, une variable unique avec le caractère '&'
@@ -101,13 +102,22 @@ Exemple : adresse_pointeur = 18;
 
 *math.h* (La même librairie qu'en python pour les opérateurs mathématiques)
 *ctype.h* (Pour des opérations sur des chaines de caracteres)
+
 ## Fonctions rencontrées 
 scanf() : permet à l'utilisateur de rentrer une valeur qui est assignée à une variable
 strlen(): permet de renvoyer la longueur d'une chaine de caractères
 strpcpy(destination,variable) : permet d'assigner à destination la variable 'variable'
 strcat(variable1;variable2) : permet de concatener var1 et var2 à partir de var1
 strcmp(var1,var2) : retourne le nombre de caractères différent entre var1 et var2 , output est un entier
+fgets() : 
 
-sizeof(list) : retourne la taille en octet de la liste.
+sizeof(list) : 
+    Retourne la taille en octet de la liste.
+    Chaque élément de la liste a la même taille, ce qui signifie que pour avoir la taille d'une liste 
 
-Chaque élément de la liste a la même taille, ce qui signifie que pour avoir la taille d'une liste 
+
+**Listes dynamiques**
+En C, une fois que l'on a crée notre liste d'entiers, on ne peut changer sa mémoire, c'est à dire, ajouter de nouveaux éléments.
+Il existe des listes dynamiques qui utilisent l'allocation suivante:
+malloc()
+realloc()

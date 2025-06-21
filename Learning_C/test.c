@@ -61,7 +61,9 @@ int main() {
 
     int test[4] = {1,2334443,3,4};
     list_of_adress(test);
-    printf("Taille premier element :%ld, taille deuxieme element : %ld",sizeof(test[0]),sizeof(test[12]));
+
+    int arr[] = {34,12,21,54,48,65};
+    largest_element(arr,sizeof(arr)/sizeof(arr[0]));
 
 
     // problème dans la compilation ? zsh trace trap ... qu'est ce que cela signifie ?

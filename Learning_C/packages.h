@@ -40,13 +40,35 @@ void switch_health_state(int state){
 }
 
 void list_of_adress(int numbers[]){
+     
     int taille = sizeof(numbers)/sizeof(numbers[0]);
+
     printf("Taille de la liste de nombres en entrée : %d \n ", taille);
-    printf("Affichage des elements d'entrée et leur adresse : \n");
+    printf("Affichage des éléments de la liste bite d'entrée et leur adresse : \n");
     for(int i=0;i<=taille+1 ;i++){
-        printf("Adresse du nombre [%d] : %p\n",numbers[i],&numbers[i]);
+        printf("Adresse du nombre [%d=%p]\n",*(numbers+i),numbers+i);
     }
+    // INFO : Si on met juste le nom de la liste en C, c'est considéré comme le premier élément de cette liste
     
 }
+
+void largest_element(int list[],int taille){
+    int largest = *list; // Avec les pointeurs, on a ici le premier élément de liste qui est assigné à largest
+    //int taille = sizeof(list)/sizeof(list[0]);
+    printf("Taille size : %d",taille);
+    for(int i=0;i<=taille;i++){
+        if (largest < *(list + i)){
+            largest = *(list +i);
+        }
+    
+    }
+    printf("Le plus grand élément de la listes est : %d",largest);
+}
+
+
+
+
+
+
 #endif
 

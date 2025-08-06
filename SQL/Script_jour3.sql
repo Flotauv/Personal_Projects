@@ -79,3 +79,61 @@ SELECT MAX(MontantTotal) AS "MAX_VENTE" FROM DLC.VENTES;
 
 SELECT MIN(PrixUnitaire) AS "Pr - chère", MAX(PrixUnitaire) AS "Pr + chère" FROM DLC.PRODUITS;
 
+-- Calculer la somme des valeurs uniques d'un attribut (Par exemple les produits vendues ) 
+
+SELECT SUM(distinct MontantTotal) AS "Somme totale" FROM DLC.VENTES;
+
+-- GROUP BY 
+
+-- Calculez la somme des ventes par employés
+
+SELECT EmployeID, SUM(MontantTotal) AS "CA_employe_total" 
+FROM  DLC.VENTES
+group by EmployeID
+order by SUM(MontantTotal) desc;
+
+-- Calculez le nombre de ventes de chaque employé.
+
+SELECT EmployeID, COUNT(VenteID)  AS "NB Ventes"
+FROM DLC.VENTES
+group by EmployeID;
+
+-- Determine la somme des ventes par année 
+
+SELECT EXTRACT(YEAR FROM DateVente) AS "Année", SUM(MontantTotal) as "Somme vente par année"
+FROM DLC.VENTES
+group by Année;
+
+-- Ventes moyenne par année et par employé 
+
+SELECT  EmployeID,EXTRACT(YEAR FROM DateVente) AS "Année", AVG(MontantTotal) as "Moyenne"
+FROM DLC.VENTES
+GROUP BY Année,EmployeID;
+
+-- HAVING 
+ 
+ -- Cas ou le chiffre d'affaire est supérieur à 1000 €
+ 
+ SELECT EXTRACT(YEAR FROM DateVente) AS "Année", SUM(MontantTotal) as "Somme_vente"
+FROM DLC.VENTES
+group by Année
+HAVING Somme_vente> 1000;
+ 
+ -- Donnez le top 5 des employés réalisant le plus gros chiffre d'affaires
+SELECT EmployeID, SUM(MontantTotal) as "Somme_vente"
+FROM DLC.VENTES
+group by EmployeID
+ORDER by Somme_vente DESC
+LIMIT  5;
+
+
+
+ 
+-- Test 
+
+SELECT EmployeID , SUM(QuantiteVendue) AS "Bite"  FROM DLC.Ventes GROUP BY 1;
+
+
+
+
+

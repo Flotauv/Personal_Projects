@@ -48,7 +48,7 @@ void list_of_adress(int numbers[]){
     for(int i=0;i<=taille+1 ;i++){
         printf("Adresse du nombre [%d=%p]\n",*(numbers+i),numbers+i);
     }
-    // INFO : Si on met juste le nom de la liste en C, c'est considéré comme le premier élément de cette liste
+    // INFO : Si on met juste le nom de la liste en C, c'est considéré comme le premier élément de cette liste pour les pointeurs
     
 }
 

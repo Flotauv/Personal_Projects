@@ -62,4 +62,125 @@ LEFT JOIN VENTES USING(ClientID)
 WHERE MontantTotal>(SELECT AVG(MontantTotal) FROM VENTES);
 
 -- Quels sont les produits qui ont un prix unitaire supérieur à la moyenne des prix. 
+SELECT ProduitID, NomProduit 
+FROM PRODUITS 
+WHERE PrixUnitaire > (SELECT AVG(PrixUnitaire) FROM PRODUITS);
 
+-- Donnez la liste des employés qui ont réalisé aucunes ventes durant le mois de décembre 2022. 
+
+SELECT EmployeID, Nom, Prenom
+FROM Employes
+WHERE EmployeID NOT IN (SELECT EmployeID FROM VENTES WHERE YEAR(DateVente)= 2022 AND MONTH(DateVente)=12);
+
+/* Avec un left join */
+
+SELECT EmployeID, Nom, Prenom
+FROM Employes
+LEFT JOIN VENTES USING(EmployeID)
+WHERE EmployeID NOT IN (SELECT EmployeID FROM VENTES WHERE YEAR(DateVente)= 2022 AND MONTH(DateVente)=12);
+
+-- Lister les clients qui n'ont jamais réalisé d'achat
+
+SELECT *
+FROM Client
+WHERE ClientID NOT IN (SELECT ClientID FROM VENTES);
+
+/* ======= Utilisation des sous requêtes dans la clause FROM ======== */
+
+-- Donnez pour chaque employé, le nom, le prénom et la moyenne des ventes annuelles
+
+
+
+SELECT EmployeID,YEAR(DateVente) as "Annee", SUM(MontantTotal) as "CA"
+FROM VENTES 
+GROUP BY EmployeID,Annee;
+
+SELECT EmployeID,Nom,Prenom,Annee, AVG(CA)
+FROM
+	(SELECT v.EmployeID,Nom,Prenom,YEAR(DateVente) as "Annee", SUM(MontantTotal) as "CA"
+	FROM VENTES v
+    INNER JOIN Employes USING(EmployeID)
+	GROUP BY EmployeID,Annee) AS temp
+
+GROUP BY EmployeID,Nom,Prenom,Annee;
+
+
+-- Taux de croissance du CA entre 2021 - 2022 
+
+-- Calcul du CA de 2021 
+
+SELECT SUM(MontantTotal) AS CA_2021 
+FROM VENTES
+WHERE YEAR(DateVente) = 2021;
+
+-- Calcul du CA de 2022 
+
+SELECT SUM(MontantTotal) AS CA_2022
+FROM VENTES
+WHERE YEAR(DateVente) = 2022;
+
+SELECT ((CA_2022 - CA_2021)/CA_2021)*100 AS "Taux_croissance"
+FROM (
+	SELECT SUM(MontantTotal) AS CA_2021 
+	FROM VENTES
+	WHERE YEAR(DateVente) = 2021) as temp,
+    
+    (SELECT SUM(MontantTotal) AS CA_2022
+	FROM VENTES
+	WHERE YEAR(DateVente) = 2022) as temp2;
+
+-- Donner la liste des 10 clients qui ont la moyenne d'achat annuelle la plus élevée.
+
+-- Calcul de la moyenne d'achat annuelle :
+
+SELECT ClientID,Nom, Prenom , YEAR(DateVente) AS "Année", SUM(MontantTotal) AS "Somme_achat" 
+FROM VENTES
+LEFT JOIN CLIENT USING(ClientID)
+GROUP BY ClientID,Nom,Prenom,Année;
+
+SELECT ClientID, Nom,Prenom, AVG(Somme_achat) AS "moyenne_achat_annuelle"
+FROM (
+		SELECT ClientID,Nom, Prenom , YEAR(DateVente) AS "Année", SUM(MontantTotal) AS "Somme_achat" 
+		FROM VENTES
+		LEFT JOIN CLIENT USING(ClientID)
+		GROUP BY ClientID,Nom,Prenom,Année
+	) AS temp
+GROUP BY ClientID,Nom,Prenom
+ORDER BY moyenne_achat_annuelle DESC
+LIMIT 10;
+
+/* ======= Joindre plusieurs tables ====== */
+
+SELECT *
+FROM Employes emp
+	LEFT JOIN Ventes ve USING(EmployeID)
+    LEFT JOIN Produits p USING(ProduitID);
+
+-- Donnez la liste des fournisseurs , client et nom produit de ceux qui ont été acheté plus de 1 fois
+
+-- Liste des produits achetés plus de 1 fois
+SELECT * 
+FROM 
+	(
+	SELECT ProduitID, COUNT(VenteID) AS "NB_achats"
+	FROM Ventes
+	GROUP BY ProduitID
+	HAVING NB_achats>1
+	) as t 
+    JOIN PRODUITS USING(ProduitID)
+    JOIN VENTES USING(ProduitID)
+    JOIN Client USING(ClientID);
+    
+
+-- Probleme car on a p
+    
+
+SELECT ProduitID,NomProduit,FournisseurID,NomFournisseur,ClientID,Nom,Prenom 
+FROM (
+	SELECT ProduitID, NomProduit, SUM(QuantiteVendue) AS "NB_achats"
+	FROM PRODUITS
+	LEFT JOIN VENTES USING(ProduitID)
+	GROUP BY ProduitID, NomProduit
+    )
+LEFT JOIN Fournisseurs USING(ProduitID)
+LEFT JOIN 

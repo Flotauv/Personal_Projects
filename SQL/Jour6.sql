@@ -89,9 +89,16 @@ GROUP BY Annee,Trimestre;
 
 
 SELECT YEAR(DateVente) as Annee ,QUARTER(DateVente) AS Trimestre, AVG(MontantTotal) AS CA, 
-	RANK()
-    OVER (PARTITION BY  YEAR(DateVente), QUARTER(DateVente) ORDER BY AVG(MontantTotal) DESC ) AS Classement,
+    OVER (ORDER BY  YEAR(DateVente) DESC, QUARTER(DateVente) DESC ) AS Classement,
     (AVG(MontantTotal) - LAG(AVG(MontantTotal),1,0) OVER ( ORDER BY QUARTER(DateVente))) / (LAG(AVG(MontantTotal),1,0) OVER (ORDER BY QUARTER(DateVente)))*100 AS Tx_croissance
 FROM VENTES
 GROUP BY YEAR(DateVente),QUARTER(DateVente);
 
+SELECT 	YEAR(DateVente) AS Annee,
+		QUARTER(DateVente) AS Trimestre,
+        SUM(MontantTotal) AS CA,
+        SUM(MontantTotal) - LAG(SUM(MontantTotal),1,0) 
+        OVER(ORDER BY YEAR(DateVente), QUARTER(DateVente)) AS Evolution,
+        (SUM(MontantTotal) - LAG(SUM(MontantTotal),1,0) OVER(ORDER BY YEAR(DateVente), QUARTER(DateVente)))/ LAG(SUM(MontantTotal),1,0) OVER(ORDER BY YEAR(DateVente), QUARTER(DateVente))*100 AS Tx_croissance
+FROM VENTES
+GROUP BY YEAR(DateVente), QUARTER(DateVente);

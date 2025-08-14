@@ -70,3 +70,30 @@ FROM CLIENT
 LEFT JOIN VENTES USING(ClientID)
 GROUP BY CLientID,Nom,Prenom
 ORDER BY SOMME_ACHAT DESC;
+
+-- Création de vue : Ensemble des ventes de l'année 2021
+
+CREATE VIEW Vente2021_3 AS 
+SELECT *
+FROM VENTES v
+WHERE YEAR(DateVente) = 2021;
+
+-- Creation d'une vue des produits dont le prix est supérieur à 500€
+CREATE VIEW Prod2Sup500 AS
+SELECT *
+FROM PRODUITS 
+WHERE PrixUnitaire >= 500;
+
+-- Sous requête SQL -- 
+
+-- Donnez la liste des clients qui ont réalisé aucun achat.
+
+SELECT * 
+FROM CLIENT 
+WHERE ClientID NOT IN (SELECT ClientID FROM VENTES);
+
+-- Client qui ont réalisé au moins une vente 
+
+SELECT * 
+FROM CLIENT 
+WHERE ClientID IN (SELECT ClientID FROM VENTES);
